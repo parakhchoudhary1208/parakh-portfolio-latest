@@ -14,8 +14,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<BackgroundTheme>("galaxy");
 
   useEffect(() => {
-    const saved = localStorage.getItem("portfolio-background-theme") as BackgroundTheme;
-    if (saved) setThemeState(saved);
+    const saved = localStorage.getItem("portfolio-background-theme");
+    if (saved === "default" || !saved) {
+      setThemeState("galaxy");
+      localStorage.setItem("portfolio-background-theme", "galaxy");
+    } else if (["galaxy", "fluid", "flux"].includes(saved)) {
+      setThemeState(saved as BackgroundTheme);
+    }
   }, []);
 
   const setTheme = (newTheme: BackgroundTheme) => {
