@@ -127,4 +127,7 @@ a {
   a, button, [role="button"] {
     cursor: pointer !important;
   }
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
 }

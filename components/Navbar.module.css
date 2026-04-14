@@ -93,6 +93,8 @@
   display: flex;
   gap: 0.6rem;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .themeBtn {
@@ -160,13 +162,17 @@
   align-items: center;
   justify-content: center;
   clip-path: circle(0% at calc(100% - 50px) 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2rem 0; /* Reduced horizontal padding, handled by content */
 }
 
 .menuContent {
   text-align: center;
   width: 100%;
-  max-width: 600px;
-  padding: 2rem;
+  max-width: 100vw;
+  padding: 2rem 1.5rem;
+  margin: auto;
 }
 
 .mobileLinks {
@@ -177,13 +183,15 @@
 .mobileLink {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-size: clamp(1.2rem, 7vw, 3.5rem);
   font-weight: 800;
   text-transform: uppercase;
   color: var(--text);
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-  transition: color 0.3s;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.04em;
+  line-height: normal;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .mobileLink:hover {
