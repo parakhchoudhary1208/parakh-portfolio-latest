@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export type BackgroundTheme = "default" | "fluid" | "flux";
+export type BackgroundTheme = "galaxy" | "fluid" | "flux";
 
 interface ThemeContextType {
   theme: BackgroundTheme;
@@ -11,7 +11,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<BackgroundTheme>("fluid");
+  const [theme, setThemeState] = useState<BackgroundTheme>("galaxy");
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-background-theme") as BackgroundTheme;

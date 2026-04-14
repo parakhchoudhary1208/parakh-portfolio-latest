@@ -6,7 +6,7 @@ import FluidScene from "./backgrounds/FluidScene";
 import FluxScene from "./backgrounds/FluxScene";
 import { useTheme } from "@/context/ThemeContext";
 
-function DefaultParticles() {
+function GalaxyParticles() {
   const meshRef = useRef<THREE.Points>(null!);
   const { mouse } = useThree();
 
@@ -70,13 +70,36 @@ function DefaultParticles() {
 }
 
 function FloatingShapes() {
+  const torusRef = useRef<THREE.Mesh>(null!);
+  const icoRef = useRef<THREE.Mesh>(null!);
+
+  useFrame(({ clock }) => {
+    const t = clock.getElapsedTime();
+    if (torusRef.current) {
+      // Rotation
+      torusRef.current.rotation.x = t * 0.3;
+      torusRef.current.rotation.y = t * 0.2;
+      // Orbital/Floating motion
+      torusRef.current.position.y = Math.sin(t * 0.4) * 0.5;
+      torusRef.current.position.x = 3.5 + Math.cos(t * 0.3) * 0.3;
+    }
+    if (icoRef.current) {
+      // Rotation
+      icoRef.current.rotation.x = -t * 0.2;
+      icoRef.current.rotation.z = t * 0.3;
+      // Orbital/Floating motion
+      icoRef.current.position.y = 1 + Math.cos(t * 0.5) * 0.6;
+      icoRef.current.position.x = -4 + Math.sin(t * 0.4) * 0.4;
+    }
+  });
+
   return (
     <>
-      <mesh position={[3.5, 0, -4]}>
+      <mesh ref={torusRef} position={[3.5, 0, -4]}>
         <torusGeometry args={[1.5, 0.3, 16, 60]} />
         <meshStandardMaterial color="#7c3aed" wireframe transparent opacity={0.25} emissive="#7c3aed" emissiveIntensity={0.5} />
       </mesh>
-      <mesh position={[-4, 1, -6]}>
+      <mesh ref={icoRef} position={[-4, 1, -6]}>
         <icosahedronGeometry args={[1.2, 1]} />
         <meshStandardMaterial color="#06b6d4" wireframe transparent opacity={0.1} emissive="#06b6d4" emissiveIntensity={0.4} />
       </mesh>
@@ -107,9 +130,9 @@ export default function ThreeBackground() {
         <pointLight position={[5, 5, 5]} intensity={0.6} color="#7c3aed" />
         <pointLight position={[-5, -3, 3]} intensity={0.4} color="#06b6d4" />
         
-        {theme === "default" && (
+        {theme === "galaxy" && (
           <>
-            <DefaultParticles />
+            <GalaxyParticles />
             <FloatingShapes />
           </>
         )}

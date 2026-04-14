@@ -72,7 +72,7 @@ export default function HeroSection() {
       );
 
       // Scroll float indicator
-      gsap.to(".scroll-indicator", {
+      gsap.to(`.${styles.scrollIndicator}`, {
         y: 12,
         duration: 1.4,
         ease: "sine.inOut",
@@ -144,22 +144,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="scroll-indicator" style={{
-        position: "absolute",
-        bottom: "2.5rem",
-        left: "50%",
-        transform: "translateX(-50%)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: "6px",
-        color: "var(--text-muted)",
-        fontSize: "0.7rem",
-        letterSpacing: "0.15em",
-        textTransform: "uppercase",
-        fontFamily: "var(--font-mono)",
-        zIndex: 5,
-      }}>
+      <div className={styles.scrollIndicator}>
         <span>Scroll</span>
         <svg width="1" height="40" viewBox="0 0 1 40">
           <line x1="0.5" y1="0" x2="0.5" y2="40" stroke="var(--accent)" strokeWidth="1" />

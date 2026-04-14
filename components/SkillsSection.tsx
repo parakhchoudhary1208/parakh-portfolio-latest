@@ -64,7 +64,7 @@ export default function SkillsSection() {
       gsap.fromTo(
         ".skills-marquee-inner",
         { x: 0 },
-        { x: "-50%", duration: 20, ease: "none", repeat: -1 }
+        { x: "-50%", duration: 50, ease: "none", repeat: -1 }
       );
     }, sectionRef);
 

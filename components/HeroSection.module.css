@@ -183,8 +183,31 @@
   background: var(--border);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1151px) {
   .hero { padding: 0 1.5rem; }
   .heading { font-size: clamp(1.8rem, 10vw, 4rem); }
   .meta { gap: 1rem; }
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  z-index: 5;
+}
+
+@media (max-width: 1151px) {
+  .scrollIndicator {
+    display: none !important;
+  }
 }

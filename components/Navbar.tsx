@@ -55,7 +55,7 @@ export default function Navbar() {
     }
   }, [isMenuOpen]);
 
-  const themes: BackgroundTheme[] = ["default", "fluid", "flux"];
+  const themes: BackgroundTheme[] = ["galaxy", "fluid", "flux"];
 
   return (
     <>
