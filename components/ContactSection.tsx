@@ -70,7 +70,7 @@ export default function ContactSection() {
         </span>
 
         <h2 ref={headingRef} className={styles.heading}>
-          Let's build<br />
+          Let&apos;s build<br />
           something<br />
           <span className={styles.accent}>extraordinary.</span>
         </h2>
@@ -78,7 +78,7 @@ export default function ContactSection() {
         <p className={styles.sub}>
           Open to freelance projects, full-time roles, and interesting collaborations.
           <br />
-          Don't be a stranger — reach out.
+          Don&apos;t be a stranger — reach out.
         </p>
 
         <a

@@ -66,7 +66,7 @@ export default function ExperienceSection() {
             Experience
           </span>
           <h2 className={styles.heading}>
-            Where I've<br />
+            Where I&apos;ve<br />
             <span className={styles.accent}>worked.</span>
           </h2>
         </div>

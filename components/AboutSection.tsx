@@ -101,9 +101,9 @@ export default function AboutSection() {
 
         <div className={styles.right}>
           <p className={`about-text ${styles.body}`}>
-            I'm a frontend developer with a passion for crafting immersive,
+            I&apos;m a frontend developer with a passion for crafting immersive,
             performant web experiences. With {totalExp} years of industry experience,
-            I've shipped production-grade applications across diverse sectors —
+            I&apos;ve shipped production-grade applications across diverse sectors —
             from defense & drones to fintech & creative agencies.
           </p>
 

@@ -125,7 +125,7 @@ export default function HeroSection() {
             href="mailto:parakhchoudhary1999@gmail.com"
             className={styles.btnSecondary}
           >
-            Let's Talk
+            Let&apos;s Talk
           </a>
         </div>
 
