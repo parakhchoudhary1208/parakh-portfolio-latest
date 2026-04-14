@@ -1,0 +1,230 @@
+.work {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.work::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.labelLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.accent {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.projectRow {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectRow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--proj-color, var(--accent)), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.projectRow.active::before {
+  opacity: 0.05;
+}
+
+.projectRow.active .projectNum {
+  color: var(--proj-color, var(--accent));
+}
+
+.projectRow.active .projectTitle {
+  color: var(--text);
+  transform: translateX(8px);
+}
+
+.projectNum {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s;
+}
+
+.projectInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.projectTitleRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: -0.02em;
+  transition: color 0.3s, transform 0.4s ease;
+  margin-bottom: 0;
+}
+
+.projectCompany {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s, transform 0.4s ease;
+}
+
+.projectRow.active .projectCompany {
+  color: var(--proj-color, var(--accent));
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.projectCategory {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.projectDesc {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.projectRow.active .projectDesc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projectDesc p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+.projectRow.active .tag {
+  border-color: var(--proj-color, var(--accent));
+  color: var(--proj-color, var(--accent));
+}
+
+.projectLink {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s, color 0.3s, transform 0.3s, background 0.3s;
+}
+
+.projectRow.active .projectLink {
+  border-color: var(--proj-color, var(--accent));
+  color: var(--proj-color, var(--accent));
+  transform: rotate(45deg);
+}
+
+@media (max-width: 900px) {
+  .work { padding: 6rem 0; }
+  .container { padding: 0 1.5rem; }
+  .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .projectRow { grid-template-columns: 50px 1fr auto; gap: 1rem; }
+  .projectInfo { grid-template-columns: 1fr; }
+  .projectDesc { display: none; }
+}

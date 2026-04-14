@@ -1,0 +1,276 @@
+.experience {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.header {
+  margin-bottom: 5rem;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.labelLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.accent {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+}
+
+.expCard {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.expDot {
+  position: absolute;
+  left: -2.9rem;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.expDotInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--exp-color, var(--accent));
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 12px var(--exp-color, var(--accent));
+}
+
+.expDotPulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--exp-color, var(--accent));
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.4); opacity: 0; }
+}
+
+.expContent {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  border-left: 2px solid var(--exp-color, var(--accent));
+  transition: border-color 0.3s;
+}
+
+.expContent:hover {
+  border-color: var(--exp-color, var(--accent));
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.08);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.expRole {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.expCompany {
+  font-size: 0.95rem;
+  color: var(--exp-color, var(--accent));
+  font-weight: 500;
+}
+
+.expLocation {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.expPeriod {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.currentBadge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  padding: 0.25rem 0.6rem;
+  border-radius: 2rem;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.highlight {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.highlightArrow {
+  color: var(--exp-color, var(--accent));
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+
+/* Education */
+.educationPanel {
+  position: sticky;
+  top: 120px;
+}
+
+.eduHeading {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.eduHeading::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.eduItem {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.eduDetail {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent2);
+  min-width: 45px;
+  padding-top: 3px;
+}
+
+.eduDegree {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.eduInstitution {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.eduPeriod {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; gap: 4rem; }
+  .educationPanel { position: static; }
+}
+
+@media (max-width: 768px) {
+  .experience { padding: 6rem 0; }
+  .container { padding: 0 1.5rem; }
+  .expHeader { flex-direction: column; }
+  .expPeriod { align-items: flex-start; }
+}

@@ -1,0 +1,179 @@
+.contact {
+  padding: 12rem 0 8rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* large glow behind */
+.contact::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+.labelLine {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+}
+
+.accent {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+}
+
+.sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 4rem;
+}
+
+.bigEmail {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  color: var(--accent2);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.4);
+  padding-bottom: 4px;
+  margin-bottom: 5rem;
+  transition: color 0.3s, border-color 0.3s;
+  letter-spacing: 0.02em;
+}
+
+.bigEmail:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+.socialRow {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  transition: color 0.3s, border-color 0.3s, background 0.3s, transform 0.3s;
+}
+
+.socialLink:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(124, 58, 237, 0.07);
+  transform: translateY(-3px);
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.phoneLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.phoneNum {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.phoneNum:hover {
+  color: var(--accent);
+}
+
+/* Decorative BG text */
+.decorText {
+  position: absolute;
+  bottom: -3rem;
+  right: -1rem;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 22vw, 18rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .contact { padding: 8rem 0 6rem; }
+  .container { padding: 0 1.5rem; }
+  .heading {
+    font-size: clamp(1.8rem, 8vw, 3.2rem);
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .socialRow { gap: 0.8rem; }
+  .socialLink { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+}
