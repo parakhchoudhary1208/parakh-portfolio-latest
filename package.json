@@ -9,21 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.102.6",
-    "@react-three/fiber": "^8.16.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.0",
     "clsx": "^2.1.0",
     "gsap": "^3.12.5",
-    "lenis": "^1.0.45",
+    "lenis": "^1.1.20",
     "next": "^16.2.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "three": "^0.163.0"
+    "three": "^0.183.2"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^24.1.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@types/three": "^0.163.0",
+    "@types/three": "^0.183.1",
     "eslint": "^8",
     "eslint-config-next": "^16.2.3",
     "typescript": "^5"
