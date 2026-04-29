@@ -117,7 +117,7 @@ export const projects = [
     category: "Corporate / Consultancy",
     tags: ["WordPress", "SCSS", "SEO", "SMTP"],
     desc: "Managed the end-to-end deployment and configuration, ensuring pixel-perfect design and optimized performance.",
-    url: "https://jpstchnologies.co.uk",
+    url: "https://jpstechnologies.co.uk",
     color: "#8b5cf6",
   },
   {
